@@ -1,0 +1,157 @@
+/* Global */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+i {
+    cursor: pointer;
+    transition: color .2s;
+}
+
+i:hover {
+    color: black;
+}
+
+
+/* Colors */
+.bg-wa-green {
+    background-color: #00a884;
+}
+
+.bg-wa-grey {
+    background-color: #e0e0dd;
+}
+
+.bg-chat-grey {
+    background-color: #eaeaea;
+}
+
+.bg-not-cyan {
+    background-color: #8edafc;
+}
+
+.text-wa-grey {
+    color: #b1b1b1;
+}
+
+
+/* Left Element */
+#notifications-bell i {
+    color: #8edafc;
+}
+
+#left-chat {
+    width: calc(100% / 3);
+}
+
+#account-info,
+#main-chat-user,
+#chat-control,
+#notifications {
+    height: 8%;
+}
+
+#notifications-text span {
+    font-size: .75rem;
+}
+
+#search-bar {
+    height: 5%;
+}
+
+#search-icon {
+    width: 15%;
+}
+
+#search {
+    width: 85%;
+}
+
+#chats {
+    height: 79%;
+}
+
+#chats li {
+    height: 11%;
+}
+
+.date span {
+    font-size: .7rem;
+}
+
+.chat-item:hover,
+.chat-item.active {
+    background-color: rgba(179, 179, 179, 0.336);
+}
+
+/* Right element */
+#right-chat {
+    width: calc(100% / 3 * 2);
+}
+
+#chat {
+    background-image: url('../img/mine.jpg');
+    padding: 0 7rem;
+}
+
+#emoji,
+#send-message {
+    width: 10%;
+    color: rgba(100, 100, 100, 0.781);
+}
+
+/* Message baloon */
+.sent {
+    background-color: #d5f9ba;
+    margin-left: auto;
+}
+
+.received {
+    background-color: white;
+}
+
+.message {
+    border-radius: 5px;
+    min-width: 40%;
+}
+
+.option-arrow {
+    right: 10px;
+    display: none;
+}
+
+.option-arrow:hover+.message-option {
+    display: block;
+}
+
+.message-option {
+    display: none;
+    top: 35%;
+    right: 0;
+    z-index: 3;
+}
+
+.message-option span:hover {
+    cursor: pointer;
+    background-color: rgba(173, 173, 173, 0.5);
+}
+
+.message-option:hover {
+    display: block;
+}
+
+.message:hover .option-arrow {
+    display: block;
+}
+
+.message .hour {
+    font-size: .6rem;
+
+    bottom: 2px;
+    right: 10px;
+}

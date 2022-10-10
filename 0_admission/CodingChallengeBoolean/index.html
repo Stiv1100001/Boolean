@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lim</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main class="black-card">
+            <!-- Ometto il <form> in questo esercizio, poichè non necessario in questo caso -->
+            <div id="card-content">
+                <!-- Logo, div non necessario poichè display: block da css -->
+                <img src="/image/logo.png" alt="logo" id="logo">
+
+                <!-- Titolo -->
+                <h1 id="title">Taking Booleaners from A to B</h1>
+
+                <!-- Zona bottoni per prenotazioni -->
+                <section id="buttons-holder">
+                    <button>Prenota</button>
+                    <button>Termina prentoazione</button>
+                    <button>Accendi luci</button>
+                </section>
+
+                <!-- Selezione monopattini -->
+                <section class="lime-selection">
+                    <ul>
+                        <li><input type="checkbox" name="gino22" placeholder="monopattino">
+                        <label for="gino22">Monopattino Gino22</label></li>
+                        <li><h3 class="via">Via Guadalametri - a 220 metri da te</h3></li>
+                        <li><h3>Stato carica:</h3></li>
+                        <li><div class="battery" id="medium"></div></li>
+                    </ul>
+                </section>
+                <section class="lime-selection">
+                    <ul>
+                        <li><input type="checkbox" name="mike24" placeholder="monopattino">
+                        <label for="mike24">Monopattino Mike24</label></li>
+                        <li><h3 class="via">Via Ricciardoni - a 420 metri da te</h3></li>
+                        <li><h3>Stato carica:</h3></li>
+                        <li><div class="battery" id="high"></div></li>
+                    </ul>
+                </section>
+                <section class="lime-selection">
+                    <ul>
+                        <li><input type="checkbox" name="fede154" placeholder="monopattino">
+                        <label for="fede154">Monopattino Fede154</label></li>
+                        <li><h3 class="via">Via Mentarini - a 490 metri da te</h3></li>
+                        <li><h3>Stato carica:</h3></li>
+                        <li><div class="battery" id="low"></div></li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </body>
+</html>

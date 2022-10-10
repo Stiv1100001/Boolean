@@ -1,0 +1,188 @@
+.ex-1-square {
+    transition: background-color 2s ease-in-out;
+}
+
+.ex-1-square:hover {
+    background-color: red;
+}
+
+.ex-2-square {
+    transition: width 4s ease-in-out;
+}
+
+.ex-2-square:active {
+    width: 100%;
+}
+
+.ex-3-square {
+    transition: border-radius 2s ease-in-out;
+}
+
+.ex-3-square:hover {
+    border-radius: 50%;
+}
+
+.ex-4-square {
+    transition: opacity 2s ease-in-out;
+}
+
+.ex-4-square:hover {
+    opacity: 0;
+}
+
+.ex-5-square {
+    transition: height 1s ease-in-out, width 1s ease-in-out;
+}
+
+.ex-5-square:hover {
+    height: 100px;
+    width: 100px;
+}
+
+.ex-5-square:active {
+    height: 12px;
+    width: 12px;
+}
+
+.ex-6-img:hover {
+    filter: grayscale();
+}
+
+.ex-7-img {
+    transition: filter 3s ease-in-out;
+}
+
+.ex-7-img:hover {
+    filter: grayscale() invert();
+}
+
+.ex-8-img {
+    transition: filter 3s ease-in-out, border-radius 3s ease-in-out;
+}
+
+.ex-8-img:hover {
+    filter: hue-rotate(90deg) blur(1px);
+    border-radius: 10%;
+}
+
+.ex-9-img {
+    transition: filter 3s ease-in-out, border-radius 3s ease-in-out, transform 3s ease-in-out;
+}
+
+.ex-9-img:hover {
+    filter: hue-rotate(180deg) saturate(90%);
+    border-radius: 20%;
+    transform: scale(1.5, 1.5);
+}
+
+.ex-10-icon {
+    animation: rotate10 1s linear infinite;
+}
+
+@keyframes rotate10 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ex-11-icon {
+    animation: rotate11 2s linear infinite;
+}
+
+@keyframes rotate11 {
+    0% {
+        transform: rotate(0);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.ex-12-top-white {
+    animation: move 2s linear infinite alternate;
+}
+
+.ex-12-bottom-white {
+    animation: move 2s linear infinite alternate-reverse;
+}
+
+@keyframes move {
+    0% {
+        left: 10%;
+    }
+
+    100% {
+        left: 60%;
+    }
+}
+
+.ex-13-top-white {
+    animation: around1 2s linear infinite;
+}
+
+@keyframes around1 {
+    0% {
+        top: -10px;
+        left: 10%;
+    }
+
+    30% {
+        top: -10px;
+        left: calc(100% - 30px);
+    }
+
+    50% {
+        top: 100%;
+        left: calc(100% - 30px);
+    }
+
+    80% {
+        top: 100%;
+        left: -10%;
+    }
+
+    95% {
+        top: -10px;
+        left: -10px;
+    }
+}
+
+.ex-13-bottom-white {
+    animation: around2 2s linear infinite;
+}
+
+@keyframes around2 {
+    0% {
+        bottom: -10px;
+        right: 20%;
+    }
+
+    30% {
+        bottom: -10px;
+        right: calc(100% - 30px);
+    }
+
+    50% {
+        bottom: 100%;
+        right: calc(100% - 30px);
+    }
+
+    80% {
+        bottom: 100%;
+        right: -10%;
+    }
+
+    95% {
+        bottom: -10px;
+        right: -10px;
+    }
+}

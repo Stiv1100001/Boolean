@@ -1,0 +1,567 @@
+/* Imports */
+@import url('http://fonts.cdnfonts.com/css/circular-std?styles=17909,17910,17911,17912,17907,17908,17905,17906');
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout utility */
+.relative {
+    position: relative;
+}
+
+.flexbox-container {
+    display: flex;
+}
+
+/* Color utility */
+.bg-black {
+    background-color: black;
+}
+
+.bg-darkgray {
+    background-color: rgb(38, 38, 38);
+}
+
+.bg-darkblue {
+    background-color: rgb(20, 25, 34);
+}
+
+.text-white {
+    color: white;
+}
+
+.text-gray {
+    color: rgb(105, 105, 105);
+}
+
+/* HTML/Body behavior */
+body {
+    font-family: 'Circular Std', sans-serif;
+}
+
+/* General */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+
+    height: 5px;
+
+    background: rgb(105, 105, 105);
+    outline: none;
+
+    opacity: .7;
+}
+
+/* Desktop-First */
+/* ! Main */
+main {
+    width: 100vw;
+    height: calc(100vh - 81px);
+}
+
+/* * Sidenav */
+main nav.sidenav {
+    height: 100%;
+    flex-basis: 250px;
+    min-height: 134px;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+main nav.sidenav div.navigation {
+    flex-direction: column;
+}
+
+main nav.sidenav div.navigation img {
+    width: 55%;
+    margin: .5rem auto;
+}
+
+main nav.sidenav div.navigation img#small-logo {
+    display: none;
+}
+
+
+main nav.sidenav div.navigation ul li {
+    margin-top: .5rem;
+    border-left: solid 2px black;
+}
+
+main nav.sidenav div.navigation ul li:hover a {
+    color: white;
+}
+
+main nav.sidenav div.navigation ul li.active {
+    border-left: solid 2px greenyellow;
+}
+
+main nav.sidenav div.navigation ul li a {
+    text-decoration: none;
+    font-weight: 450;
+    font-size: 17px;
+    line-height: 30px;
+}
+
+main nav.sidenav div.navigation ul li img {
+
+    width: 35px;
+
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+main nav.sidenav div.navigation>p {
+    text-transform: uppercase;
+    font-size: 12px;
+
+    margin: 1rem .2rem;
+}
+
+main nav.sidenav div.navigation ul.playlist {
+    max-height: 40vh;
+    overflow: auto;
+}
+
+main nav.sidenav div.navigation ul.playlist li {
+    font-size: 12px;
+    margin-bottom: .8rem;
+}
+
+main nav.sidenav div.navigation ul.playlist li i {
+    font-size: 20px;
+    background-color: rgb(199, 199, 199);
+    padding: .2rem .25rem;
+    height: 100%;
+    margin-left: 0;
+    color: black;
+}
+
+main nav.sidenav div.profile-option {
+    width: 100%;
+    padding: .7rem;
+}
+
+main nav.sidenav div.profile-option div.install {
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+    font-size: 12px;
+}
+
+main nav.sidenav div.profile-option div.install {
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+}
+
+main nav.sidenav div.profile-option div.install:hover p {
+    color: white;
+}
+
+main nav.sidenav div.profile-option div.install i.fas.fa-arrow-circle-down {
+    margin-right: .2rem;
+}
+
+main nav.sidenav div.profile-option div.profile {
+    padding: 10px 0 0 0;
+    line-height: 30px;
+}
+
+main nav.sidenav div.profile-option div.profile img {
+    display: inline-block;
+    width: 30px;
+    background-color: rgb(105, 105, 105);
+    padding: .25rem;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+main nav.sidenav div.profile-option div.profile p {
+    display: inline-block;
+}
+
+/* * Main Section */
+main section.main-section {
+    height: 100%;
+    width: calc(100% - 250px);
+    overflow-y: auto;
+}
+
+main section.main-section div.call-to-action {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+
+    width: calc(100% - 250px);
+    height: 75px;
+    min-height: 75px;
+
+    background-color: rgba(0, 0, 0, 0.363);
+
+    justify-content: end;
+    align-items: center;
+}
+
+main section.main-section div.call-to-action a.call-btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+
+    padding: .6rem 2.5rem;
+    margin-right: 1rem;
+
+    border: 1px solid white;
+    border-radius: 1.5rem;
+
+    transition: all .5s;
+}
+
+main section.main-section div.call-to-action a.call-btn:hover {
+    transform: scale(1.1);
+}
+
+main section.main-section div.categories {
+    margin-top: 75px;
+    margin-bottom: 4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+main section.main-section div.categories ul {
+    justify-content: space-around;
+    column-gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+main section.main-section div.categories ul li {
+    list-style: none;
+}
+
+main section.main-section div.categories ul li:hover a {
+    color: white;
+}
+
+main section.main-section div.categories ul li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+main section.main-section div.categories ul li hr.active {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border: 1px greenyellow solid;
+    width: 30px;
+}
+
+main section.main-section div.music {
+    margin-top: 3rem;
+    padding: 0 2rem;
+}
+
+main section.main-section div.music h4.subtitle {
+    font-size: 13px;
+}
+
+main section.main-section div.music div.carousel {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+main section.main-section div.music div.carousel div.album {
+    flex-direction: column;
+    width: calc(100% / 6 - 1.5rem);
+    text-align: center;
+}
+
+main section.main-section div.music div.carousel div.album img {
+    width: 100%;
+}
+
+main section.main-section div.music div.carousel div.album div.hover {
+    display: none;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    font-size: 50px;
+}
+
+main section.main-section div.music#artists div.carousel div.album div.hover {
+    border-radius: 50%;
+}
+
+main section.main-section div.music div.carousel div.album:hover div.hover {
+    display: inherit;
+}
+
+main section.main-section div.music div.carousel div.album div.image i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+main section.main-section div.music#artists div.carousel div.album img {
+    border-radius: 50%;
+}
+
+main section.main-section div.music div.carousel div.album h6 {
+    margin-top: .5rem;
+    font-size: 18px;
+}
+
+main section.main-section div.music div.carousel div.album p {
+    margin-top: .3rem;
+    font-size: 12px;
+}
+
+/* Footer */
+footer#controls {
+    width: 100vw;
+    height: 80px;
+
+    min-height: 60px;
+
+    z-index: 10;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer#controls div#current-playing {
+    margin-left: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer#controls div#current-playing .left {
+    align-items: center;
+}
+
+footer#controls div#current-playing img {
+    height: 70px;
+    padding: .8rem .8rem .8rem 0;
+}
+
+footer#controls div#current-playing div.song-info {
+    flex-direction: column;
+}
+
+footer#controls div#current-playing div.song-info h6.title {
+    font-size: 15px;
+}
+
+footer#controls div#current-playing div.song-info p.author {
+    font-size: 12px;
+}
+
+footer#controls div#current-playing div.song-info:hover p.author {
+    color: white;
+}
+
+footer#controls div#current-playing div.buttons {
+    margin-left: 2rem;
+}
+
+footer#controls div#current-playing div.buttons i {
+    margin-left: .5rem;
+}
+
+footer#controls div#current-playing div.buttons i:hover {
+    color: white;
+}
+
+footer#controls div#control-buttons {
+    flex-direction: column;
+}
+
+footer#controls div#control-buttons div.buttons {
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 5;
+}
+
+footer#controls div#control-buttons div.buttons i {
+    margin: 0 1rem;
+    font-size: 1.1rem;
+}
+
+footer#controls div#control-buttons div.buttons i.fa-play-circle {
+    font-size: 2.5rem;
+}
+
+footer#controls div#control-buttons div.buttons i.fa-play-circle:hover {
+    transform: scale(1.2);
+}
+
+footer#controls div#control-buttons div.position {
+    margin-top: .3rem;
+    align-items: center;
+    font-size: 12px;
+}
+
+footer#controls div#control-buttons div.position hr {
+    margin: 0 1rem;
+    width: 30vw;
+}
+
+footer#controls div#control-buttons div.position hr.lower {
+    border: 2px solid rgb(105, 105, 105);
+    border-radius: 1%;
+}
+
+footer#controls div#control-buttons div.position hr.upper {
+    position: absolute;
+    border: 2px solid white;
+    top: 0;
+    border-radius: 5%;
+    width: 10vw;
+}
+
+footer#controls div#control-buttons div.position:hover hr.upper {
+    border: 2px solid greenyellow;
+}
+
+footer#controls div#control-buttons div.position div.pointer {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    left: 33%;
+
+    transform: translateY(-35%);
+
+    border-radius: 50%;
+}
+
+footer#controls div#control-buttons div.position:hover div.pointer {
+    display: block;
+}
+
+footer#controls div#control-player {
+    margin-right: 1rem;
+    align-items: center;
+    width: 20%;
+}
+
+footer#controls div#control-player div.volume {
+    width: 50%;
+}
+
+footer#controls div#control-player div.volume hr.lower {
+    border: 2px solid gray;
+}
+
+footer#controls div#control-player div.volume hr.upper {
+    position: absolute;
+    top: 0;
+
+    border: 2px solid white;
+    width: 50px;
+}
+
+footer#controls div#control-player div.volume div.pointer {
+    display: none;
+    position: absolute;
+    top: -5px;
+
+    left: 50%;
+    background-color: white;
+
+    width: 15px;
+    height: 15px;
+    border-radius: 40%;
+}
+
+footer#controls div#control-player div.volume:hover div.pointer {
+    display: inline-block;
+}
+
+footer#controls div#control-player i {
+    margin: 0 .3rem;
+}
+
+
+/* Lg Screen */
+@media screen and (max-width: 1200px) {
+    main section.main-section div.music div.carousel div.album {
+        width: calc(100% / 4 - 1.5rem);
+    }
+
+    footer#controls div#control-player {
+        margin-right: 0px;
+
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 1rem;
+    }
+
+    footer#controls div#control-player div.volume div.pointer {
+        left: 55%;
+    }
+}
+
+/* Md Screen */
+@media screen and (max-width: 992px) {
+    main section.main-section div.music div.carousel div.album {
+        width: calc(100% / 2 - 1.5rem);
+    }
+}
+
+/* Sm Screen */
+@media screen and (max-width: 768px) {
+
+    main nav.sidenav div.navigation img#big-logo,
+    main nav.sidenav div.navigation ul li a,
+    main nav.sidenav div.navigation>p,
+    main nav.sidenav div.navigation ul.playlist,
+    main nav.sidenav div.profile-option div.profile p,
+    main nav.sidenav div.profile-option div.install span {
+        display: none;
+    }
+
+    main nav.sidenav div.profile-option div.install {
+        border-bottom: none;
+    }
+
+    main nav.sidenav div.profile-option {
+        padding: .2rem;
+    }
+
+    main nav.sidenav div.profile-option div.install i.fas.fa-arrow-circle-down {
+        margin: 0 25%;
+        font-size: 15px;
+    }
+
+    main nav.sidenav div.navigation img#small-logo {
+        display: block;
+    }
+
+    main nav.sidenav {
+        flex-basis: 40px;
+    }
+
+    main section.main-section {
+        width: calc(100% - 40px);
+    }
+}

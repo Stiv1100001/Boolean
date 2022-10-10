@@ -1,0 +1,140 @@
+/* Body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #717171;
+}
+
+/* BG Utility */
+.img-bg {
+    background-position: center;
+    background-size: cover;
+}
+
+/* Color utility */
+.cs-bg-black {
+    background-color: rgb(31, 31, 31);
+}
+
+.cs-bg-lightgray {
+    background-color: rgb(190, 188, 187);
+}
+
+.cs-bg-blue {
+    background-color: rgb(0, 67, 156);
+}
+
+.cs-bg-deepblue {
+    background-color: rgb(22, 28, 59);
+}
+
+.btn-gray {
+    background-color: rgb(217, 218, 220);
+    border-color: rgb(217, 218, 220);
+}
+
+/* Hover effect */
+.blue-border,
+.blue-border-a {
+    transition: transform 1s ease, border .3s;
+}
+
+.blue-border:hover,
+.blue-border-a:active {
+    border-color: rgb(7, 118, 207) !important;
+}
+
+.blue-border-a:hover {
+    transform: translateY(-20px);
+}
+
+.btn {
+    transition: box-shadow .2s;
+}
+
+.btn:hover {
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.336);
+}
+
+.btn.btn-danger:hover {
+    box-shadow: 5px 5px white;
+}
+
+/* Header */
+div#topbar {
+    font-family: Helvetica, sans-serif;
+}
+
+div#topbar img {
+    width: 6%;
+    min-width: 60px;
+}
+
+nav .dropdown-toggle::after {
+    content: url('./../img/chevron-down-solid.svg');
+    width: 12px;
+    vertical-align: middle;
+    border: none;
+}
+
+nav .nav-item:hover .dropdown-toggle::after {
+    content: url('./../img/chevron-down-solid-hover.svg');
+}
+
+nav img.lens {
+    width: 2.3rem;
+    vertical-align: middle;
+}
+
+/* Jumbotron */
+section#jumbotron {
+    background-image: url('./../img/jumbo-bg.png');
+}
+
+section#jumbotron {
+    height: 60vh;
+}
+
+/* Games list */
+section#game-list div.cs-border img {
+    border-radius: 20px;
+}
+
+section#game-list div.cs-border.border {
+    border-radius: 25px;
+    transition: border .2s;
+}
+
+/* Last Game */
+section#last-game {
+    background-image: url('./../img/it-takes-two-hero-banner-desktop.jpg');
+}
+
+/* Playstation Plus */
+section#plus img.left {
+    width: 70%;
+}
+
+/* Playstation Now */
+section#now img.left {
+    width: 60%;
+}
+
+/* Footer */
+footer li {
+    list-style-type: none;
+    line-height: 2rem;
+}
+
+footer li a {
+    text-decoration: none;
+}
+
+footer img.left {
+    width: 20%;
+    max-width: 140px;
+}
+
+footer img.globe {
+    width: 16px;
+    vertical-align: middle;
+}

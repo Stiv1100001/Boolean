@@ -1,0 +1,35 @@
+/* Color utility */
+
+.navbar-blue {
+    background-color: #2C3E50;
+}
+
+.jumbo-green {
+    background-color: rgb(26, 188, 156);
+}
+
+.footer-blue {
+    background-color: rgb(58, 84, 109);
+}
+
+.footer-deep-blue {
+    background-color: rgb(44, 62, 80);
+}
+
+.img-profile {
+    width: 250px;
+}
+
+.line {
+    width: 100px;
+    border: 2px solid white;
+    border-radius: 2px;
+}
+
+.line-blue {
+    border-color: rgb(33, 37, 41);
+}
+
+.text-teal {
+    color: rgb(25, 191, 157);
+}

@@ -1,0 +1,83 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Layout utility */
+
+.mg-bot {
+    margin-bottom: 20px;
+}
+
+.mg-right {
+    margin-right: 10px;
+}
+
+.fl-left {
+    float: left;
+}
+
+/* Color utility */
+
+.bg-magenta {
+    background-color: rgb(229, 121, 230);
+}
+
+.bg-yellow {
+    background-color: rgb(225, 214, 122);
+}
+
+.bg-blue {
+    background-color: rgb(1, 133, 255);
+}
+
+.bg-cyan {
+    background-color: rgb(171, 207, 231);
+}
+
+.bg-violet {
+    background-color: rgb(135, 1, 254);
+}
+
+/* Sizing utility */
+
+.small-width {
+    width: calc(25% - 10px);
+    height: 350px;
+}
+
+.big-width {
+    width: 50%;
+    height: 350px;
+}
+
+/* Body */
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+#main-header {
+    height: 100px;
+}
+
+#jumbotron {
+    height: 300px;
+}
+
+#second-header {
+    height: 50px;
+}
+
+#footer {
+    height: 50px;
+}

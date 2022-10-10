@@ -1,0 +1,62 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "./partials/variables";
+@import "./partials/mixin";
+@import "./partials/fonts";
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.btn-blue {
+    background-color: $blue-lagoon;
+    color: $white;
+    padding: .5rem 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $fountain-blue;
+      color: $white;
+    }
+}
+
+.btn-outlined-blue {
+    border: 1px solid $blue-lagoon;
+    color: $blue-lagoon;
+    padding: .5rem 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $fountain-blue;
+    }
+}
+
+h6.subtitle {
+    color: $fountain-blue;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h1.title {
+    font-weight: bold;
+
+    .highligth {
+        color: $blue-lagoon;
+        background-color: $blue-bg;
+        padding: 0rem 1rem;
+    }
+
+    &.alternate {
+        color: $white;
+        .highligth {
+            color: $white;
+            background-color: #0b2b2d;
+        }
+    }
+}

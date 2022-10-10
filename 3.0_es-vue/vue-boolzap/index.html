@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Boolzap</title>
+
+    <!-- Bootstrap 5.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/db3c248fc2.js" crossorigin="anonymous"></script>
+
+    <!-- Custom style -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Vue -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.common.dev.min.js"></script>
+
+    <!-- Moment JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <main id="app" class="vh-100 vw-100 position-relative">
+      <!-- Colored Backgrounds -->
+      <section class="w-100 h-25 bg-wa-green"></section>
+      <section class="w-100 h-75 bg-wa-grey"></section>
+
+      <!-- Main Content -->
+      <section class="position-absolute top-0 vh-100 vw-100">
+        <div class="container vh-100 py-5 px-0">
+          <!-- Floating card -->
+          <div class="bg-chat-grey w-100 h-100 d-flex">
+            <!-- Left Element -->
+            <div id="left-chat" class="h-100 d-flex flex-column">
+              <!-- User info -->
+              <div id="account-info" class="p-2 d-flex border-end border-1 justify-content-between">
+                <!-- User data -->
+                <div id="user" class="d-flex align-items-center w-50">
+                  <img src="img/avatar_io.jpg" alt="Stefano" class="h-100 rounded-circle" />
+                  <h6 class="mb-0 ms-2 fw-bold">Stefano</h6>
+                </div>
+                <!-- Account actions -->
+                <div
+                  id="actions"
+                  class="d-flex justify-content-end align-items-center text-wa-grey"
+                >
+                  <i class="fa-solid fa-circle-notch fa-lg"></i>
+                  <i class="fa-solid fa-message fa-lg ms-2"></i>
+                  <i class="fa-solid fa-bars fa-lg ms-2"></i>
+                </div>
+              </div>
+              <!-- Notifications pop up -->
+              <div id="notifications" class="bg-not-cyan py-2 px-3 d-flex align-items-center">
+                <div id="notifications-bell" class="bg-white rounded-circle p-2">
+                  <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div id="notifications-text" class="ms-2 py-2">
+                  <span class="d-block fw-bold">Ricevi notifiche di nuovi messaggi</span>
+                  <span class="d-block text-decoration-underline">Attiva notifiche desktop</span>
+                </div>
+              </div>
+              <!-- Searchbar -->
+              <div id="search-bar" class="p-1">
+                <div class="d-flex h-100 align-items-center">
+                  <div
+                    id="search-icon"
+                    class="bg-white h-100 d-flex justify-content-center align-items-center"
+                  >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                  <input
+                    id="search"
+                    type="text"
+                    class="border-0 h-100"
+                    placeholder="Cerca o inizia una nuova chat"
+                    v-model="toSearch"
+                    @keyup="search()"
+                  />
+                </div>
+              </div>
+              <!-- Chats list -->
+              <ul v-if="contacts.length > 0" id="chats" class="p-0 m-0 overflow-auto bg-white">
+                <li
+                  v-for="(contact, index) in contacts"
+                  v-if="contact.visible"
+                  class="chat-item list-unstyled p-2 d-flex border-bottom border-1 overflow-hidden"
+                  :class="index === currentIndex ? 'active' : '' "
+                  @click="setShowedChat(index)"
+                >
+                  <img
+                    :src="`img/avatar${contact.avatar}.jpg`"
+                    alt=""
+                    class="rounded-circle h-100"
+                  />
+                  <div class="chat-text d-flex flex-column flex-grow-1 ms-2">
+                    <span class="fw-bold">{{ contact.name }}</span>
+                    <span class="text-wa-grey fs-6"> {{ truncateLastMessage(contact) }}</span>
+                  </div>
+                  <div class="date">
+                    <span class="text-wa-grey">{{ getLastMessageTime(contact) }}</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right Element -->
+            <div id="right-chat" class="h-100 d-flex flex-column">
+              <!-- User main info -->
+              <div id="main-chat-user" class="d-flex justify-content-between py-1 px-2 w-100">
+                <div id="main-user-info" class="d-flex align-items-center w-50">
+                  <img
+                    :src="`img/avatar${contacts[currentIndex].avatar}.jpg`"
+                    :alt="contacts[currentIndex].name"
+                    class="h-100 rounded-circle"
+                  />
+                  <div class="d-flex flex-column">
+                    <span> {{ contacts[currentIndex].name }}</span>
+                    <span>
+                      Ultimo accesso alle {{ getLastMessageTime(contacts[currentIndex]) }}</span
+                    >
+                  </div>
+                </div>
+                <div id="main-user-actions" class="d-flex align-items-center text-wa-grey">
+                  <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                  <i class="fa-solid fa-paperclip fa-xl ms-3"></i>
+                  <i class="fa-solid fa-ellipsis-vertical fa-xl ms-3 me-2"></i>
+                </div>
+              </div>
+
+              <div id="chat" class="flex-grow-1 overflow-auto">
+                <ul class="w-100 h-100 overflow-auto p-0 m-0">
+                  <li v-for="(message, index) in contacts[currentIndex].messages" class="d-flex">
+                    <div
+                      class="px-2 pt-2 pb-3 my-2 message position-relative"
+                      :class="message.status === 'sent' ? 'sent' : 'received'"
+                    >
+                      <span>{{ message.message }}</span>
+                      <span class="hour position-absolute">{{ getTime(message.date) }}</span>
+                      <span class="option-arrow position-absolute top-0"
+                        ><i class="fa-solid fa-chevron-down"></i
+                      ></span>
+                      <div class="message-option position-absolute bg-white w-75 rounded-3">
+                        <span class="d-block p-2">Message Info </span>
+                        <span @click="deleteMessage(index)" class="p-2 d-block"
+                          >Delete Message</span
+                        >
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div id="chat-control" class="py-1 d-flex">
+                <div id="emoji" class="h-100 d-flex justify-content-center align-items-center">
+                  <i class="fa-regular fa-face-smile fa-xl"></i>
+                </div>
+                <div id="message" class="h-100 flex-grow-1 d-flex align-items-center">
+                  <input
+                    type="text"
+                    class="form-control border-0"
+                    placeholder="Scrivi un messaggio"
+                    v-model="newMessage"
+                    @keyup.enter="sendMessage()"
+                  />
+                </div>
+                <div
+                  id="send-message"
+                  class="h-100 d-flex justify-content-center align-items-center"
+                >
+                  <i v-if="newMessage === ''" class="fa-solid fa-microphone fa-xl"></i>
+                  <i v-else class="fa-solid fa-location-arrow fa-xl" @click="sendMessage()"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

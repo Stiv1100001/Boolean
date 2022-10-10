@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toobolist</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="img/Logo.png" alt="Logo Boolean">
+        <h1 id="title">Toboolist</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="buttons">
+                <button class="btn" id="add-task">Add Task</button>
+                <button class="btn" id="add-section">Add Section</button>
+            </div>
+
+            <hr id="divider">
+            </hr>
+
+            <div id="to-dos">
+                <!-- Dovrei dare un colore ai "pallini" della lista, ma usando delle immagini non penso si possa fare onestamente
+                Dovrei dare un color all'svg, ma per farlo dovrei usare ::before simulando una lista, non facendone una vera -->
+                <section class="sections">
+                    <ul class="section">
+                        <li class="section-title">New Task</li>
+                        <li>
+                            <ul class="section-todo">
+                                <li class="todo done"> Quarterly Newsletter <span class="chips blue">Editorial</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section class="sections">
+                    <ul class="section">
+                        <li class="section-title">Today</li>
+                        <li>
+                            <ul class="section-todo">
+                                <li class="todo done"> Recruiting blog post <span class="chips blue">Editorial</span>
+                                </li>
+                                <li class="todo done"> Mobile app launch <span class="chips violet">Q1 Goals</span></li>
+                                <li class="todo undone">Interview John H. <span class="chips green">Recruiting</span>
+                                </li>
+                                <li class="todo done">Summit update to mobile storefronts <span
+                                        class="chips orange">Mobile</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section class="sections">
+                    <ul class="section">
+                        <li class="section-title">Upcoming</li>
+                        <li>
+                            <ul class="section-todo">
+                                <li class="todo undone"> Schedule meeting with Alex</li>
+                                <li class="todo done">Homepage refresh <span class="chips pink">Website</span></li>
+                                <li class="todo done">Onboard new Sales team member <span
+                                        class="chips acid">Sales</span></li>
+                                <li class="todo done">Review editorial calendar <span
+                                        class="chips blue">Editorial</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

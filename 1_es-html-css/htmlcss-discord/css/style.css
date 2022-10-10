@@ -1,0 +1,185 @@
+/* ! RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Whitney', sans-serif;
+}
+
+/* Utility */
+
+.fl-left {
+    float: left;
+}
+
+.mg-bot {
+    margin-bottom: 2rem;
+}
+
+/* Color utility */
+.bg-gray {
+    background-color: rgb(246, 246, 246);
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-blue {
+    background-color: #8ea1e1;
+    color: white;
+}
+
+.btn-black {
+    background-color: black;
+    color: white;
+}
+
+/* Generics */
+.btn {
+    border: none;
+    padding: 8px 10px;
+    border-radius: 30px;
+}
+
+.btn-large {
+    padding: 12px 15px;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(49, 97, 224);
+    line-height: 80px;
+}
+
+.container {
+    width: 75%;
+    max-width: 1180px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 20%;
+}
+
+.logo>img {
+    vertical-align: middle;
+}
+
+.main-nav {
+    width: 60%;
+    text-align: center;
+}
+
+.login {
+    width: 20%;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1vw;
+    font-weight: 500;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Jumbotron */
+
+.jumbotron {
+    background-image: url('../img/jumbo.png');
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+}
+
+.page-title {
+    text-align: center;
+    color: white;
+    padding: 75px 50px;
+}
+
+.jumbotron h1 {
+    font-size: 50px;
+}
+
+.jumbotron p {
+    width: 60%;
+    margin: 0 auto;
+    line-height: 1.5rem;
+}
+
+.buttons {
+    padding: 1.5rem 0;
+}
+
+.buttons .btn {
+    margin-right: 1rem;
+}
+
+/* * Content */
+
+.main-section {
+    padding: 100px 20px;
+}
+
+.img-element img {
+    width: 100%;
+}
+
+.img-element {
+    width: 65%;
+}
+
+.text-element {
+    width: 35%;
+    padding-top: 2.1rem;
+}
+
+.text-element h2, .full-width-element h2 {
+    font-size: 3rem;
+    margin-bottom: 1em;
+}
+
+.text-element p, .full-width-element p {
+    line-height: 1.6em;
+}
+
+.full-width-element {
+    width: 100%;
+    text-align: center;
+}
+
+.full-width-element img {
+    width: 100%;
+}
+
+.stars-title {
+    width: 50%;
+    margin: 2rem auto;
+    background-image: url('../img/stars.svg');
+    background-size: contain;
+    padding: 2rem 1rem 1rem;
+    background-repeat: no-repeat;
+}
+
+/* Footer */

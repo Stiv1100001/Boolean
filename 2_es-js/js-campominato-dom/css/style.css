@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(128, 254, 213);
+}
+
+.my-row {
+    height: 4rem;
+}
+
+.block {
+    width: 4rem;
+}
+
+.bg-cyan {
+    background-color: cyan;
+}

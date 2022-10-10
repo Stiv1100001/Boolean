@@ -1,0 +1,48 @@
+.row .col-9, .row .col {
+    max-height: 50vh;
+}
+
+#main-img {
+    object-fit: cover;
+}
+
+#title {
+    bottom: 30%;
+    right: 20px;
+}
+
+#text {
+    bottom: 10%;
+    right: 20px;
+    width: 60%;
+}
+
+.carousel-img {
+    height: calc(100% / 5);
+    transition: all .3s;
+    filter: brightness(.4);
+}
+
+.carousel-img.img-thumbnail {
+    filter: brightness(1);
+}
+
+.arrow {
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: rgba(252, 252, 252, 0.452);
+
+    padding: .2rem .4rem;
+    cursor: pointer;
+
+    z-index: 2;
+}
+
+#arrow-up {
+    top: 10px;
+}
+
+#arrow-down {
+    bottom: 10px;
+}

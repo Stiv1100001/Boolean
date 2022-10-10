@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Campominato</title>
+  </head>
+
+  <body>
+
+    <header class="bg-white w-100 p-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="title">
+         <h3>Campo minato</h>
+        </div>
+        <div class="controls">
+          <div class=" d-flex">
+            <select
+              title="Difficoltà"
+              name="difficulty"
+              id="difficulty"
+              class="form-select form-select-lg me-3">
+              <option value="" selected disabled>Seleziona difficoltà</option>
+              <option value="1">Facile</option>
+              <option value="2">Medio</option>
+              <option value="3">Difficile</option>
+            </select>
+            <button id="play" class="btn btn-primary rounded-pill">Gioca!</button>
+            </div>
+        </div>
+      </div>
+    </header>
+    <main class="container-md mt-2 d-flex flex-column justify-content-center align-ite">
+      <section id="score" class="fs-2 p-2 m-2 text-center"></section>
+      <section id="grid"></section>
+    </main>
+
+    <script src="js/main.js" type="text/javascript"></script>
+  </body>
+</html>
